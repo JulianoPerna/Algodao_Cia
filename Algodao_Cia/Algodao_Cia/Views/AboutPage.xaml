@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Algodao_Cia.Views.AboutPage"
+             xmlns:vm="clr-namespace:Algodao_Cia.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Predominante">#F4A460</Color>
+            <Color x:Key="Botao">#F8F8FF</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="Branco">#FFFAFA</Color>
+            <Image x:Key="Add"  Source="Add.png"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout Orientation="Vertical" Spacing="100">
+           
+                <Image Source="LogoJuliano.png"/>
+            
+            <StackLayout  HorizontalOptions="Center" VerticalOptions="Center">
+
+
+            </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="40" BackgroundColor="{StaticResource Branco}">
+
+                    <Button Margin="0,10,1,0" Text="Novo Pedido" Command="{Binding NovoPedido}" BackgroundColor="{StaticResource Botao}" TextColor="Black"  BorderColor="{StaticResource Accent}"  ImageSource="{Binding ImagemBotao}"/>
+                
+                <Button Margin="0,10,1,0" Text="Cadastro Produto" Command="{Binding CadastrarProduto}" BackgroundColor="{StaticResource Botao}" TextColor="Black"  BorderColor="{StaticResource Accent}" ImageSource="Add.png"  />
+
+                <Button Margin="0,10,1,0" Text="Cadastro Cliente" Command="{Binding CadastrarCliente}" BackgroundColor="{StaticResource Botao}" TextColor="Black"  BorderColor="{StaticResource Accent}" ImageSource="" />
+
+                <Button Margin="0,10,1,0" Text="Imprimir" Command="{Binding Imprimir}" BackgroundColor="{StaticResource Botao}" TextColor="Black"  BorderColor="{StaticResource Accent}" />
+
+            </StackLayout>
+        </ScrollView>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

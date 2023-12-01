@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Algodao_Cia.Views.PedidoPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal" Spacing="30">
+                <Button Text="Voltar" Command="{Binding EventoVoltar}" BackgroundColor="White" TextColor="Black" Margin="1,1,1,1"/>
+                <Label Text="Novo Pedido" FontSize="Large" Margin="15,15,0,0" TextColor="Coral"/>
+            </StackLayout>
+
+            <StackLayout Spacing="10" Orientation="Vertical" Margin="10,10,10,10">
+
+                      <!--Dados Cliente-->
+                     <StackLayout Orientation="Vertical" Spacing="10" Margin="0,10,10,10" >
+                    <Label Text="Dados Cliente" FontSize="Medium" TextColor="Black" FontAttributes="Bold,Italic"/>
+                                             <StackLayout Orientation="Horizontal" Spacing="10" Margin="10,10,10,10"  >
+                                                 <Entry Text="{Binding NomeCliente}"  FontSize="Small" Placeholder="Selecione o Cliente" Margin="0,0,1,0" HorizontalOptions="Fill" IsEnabled="False"/>
+                                                 <Button Text="Selecionar" Command="{Binding EventoSelecionarCliente}" HorizontalOptions="EndAndExpand" Margin="0,0,0,0" FontSize="Micro"/>
+                                              </StackLayout>
+                     </StackLayout>
+                
+                    <!--Dados produto-->
+                     <StackLayout Orientation="Vertical" Spacing="10" Margin="0,10,10,10">
+                                <Label Text="Dados Produto" FontSize="Medium" TextColor="Black" FontAttributes="Bold,Italic"/>
+
+                                <StackLayout Orientation="Horizontal" Spacing="10" Margin="10,10,10,10"  >
+                                    <Entry Text="{Binding NomeCliente}"  FontSize="Small" Placeholder="Selecione o Produto" Margin="0,0,1,0" HorizontalOptions="Fill" IsEnabled="False"/>
+                                    <Button Text="Selecionar" Command="{Binding EventoSelecionarProduto}" HorizontalOptions="EndAndExpand" Margin="0,0,0,0" FontSize="Micro"/>
+                                </StackLayout>
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Vertical" Margin="0,10,10,10">
+
+                    <Label  Text="Quantidade do Produto" FontSize="Medium" TextColor="Black" FontAttributes="Bold,Italic"  HorizontalTextAlignment="Center"/>
+                    <Entry   Placeholder="Quantidade" FontSize="Large" Margin="120,0,120,0" Keyboard="Numeric" HorizontalTextAlignment="Center" Text="{Binding QuantidadeInformada}"  TextChanged="Entry_TextChanged"/>
+                </StackLayout>
+                
+
+            </StackLayout>
+
+
+            <Button Text="Ok" BackgroundColor= "Coral" VerticalOptions="EndAndExpand"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

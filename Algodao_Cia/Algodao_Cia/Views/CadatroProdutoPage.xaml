@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Algodao_Cia.Views.CadatroProdutoPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Spacing="100">
+            <StackLayout Orientation="Horizontal" Spacing="30">
+                <Button Text="Voltar" Command="{Binding EventoVoltar}" BackgroundColor="White" TextColor="Black" Margin="1,1,1,1"/>
+                <Label Text="Cadastro de Produto" FontSize="Medium" Margin="0,10,0,0"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <Entry Text="{Binding DescricaoProduto}" Placeholder="Descição do Produto"  FontSize="Small" Margin="10"/>
+                <Entry Text="{Binding ValorProduto}" Placeholder="Preço"  FontSize="Medium" Margin="0,10,100,0" Keyboard="Numeric" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand">
+                <Button Text="Salvar" Command="{Binding EventoSalvar}" Margin="10" BackgroundColor="Coral"/>
+            </StackLayout>
+            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
